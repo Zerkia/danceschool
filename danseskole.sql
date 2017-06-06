@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 29. 05 2017 kl. 12:51:10
+-- Genereringstid: 06. 06 2017 kl. 09:32:35
 -- Serverversion: 5.6.24
 -- PHP-version: 5.6.8
 
@@ -116,14 +116,16 @@ CREATE TABLE IF NOT EXISTS `instruktorer` (
   `beskrivelse` text NOT NULL,
   `fk_media` int(11) NOT NULL,
   `fk_profil` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Data dump for tabellen `instruktorer`
 --
 
 INSERT INTO `instruktorer` (`ID`, `beskrivelse`, `fk_media`, `fk_profil`) VALUES
-(2, 'Lederen af alle Admins.', 2, 10);
+(2, 'Lederen af alle Admins.', 2, 10),
+(3, 'Den normale administrator, der ogsÃ¥ er instruktÃ¸r', 3, 9),
+(4, 'Den normale administrator, der ogsÃ¥ er instruktÃ¸r', 4, 9);
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `media` (
   `ID` int(11) NOT NULL,
   `sti` varchar(255) CHARACTER SET utf8 NOT NULL,
   `type` varchar(90) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Data dump for tabellen `media`
@@ -143,7 +145,9 @@ CREATE TABLE IF NOT EXISTS `media` (
 
 INSERT INTO `media` (`ID`, `sti`, `type`) VALUES
 (1, '1495623130_open-book-bw.jpg', 'image/jpeg'),
-(2, '1495625492_open-book-bw.jpg', 'image/jpeg');
+(2, '1495625492_open-book-bw.jpg', 'image/jpeg'),
+(3, '1496300853_100 Crates In The Bank.png', 'image/png'),
+(4, '1496301164_100 Crates In The Bank.png', 'image/png');
 
 -- --------------------------------------------------------
 
@@ -181,9 +185,9 @@ CREATE TABLE IF NOT EXISTS `profil` (
 INSERT INTO `profil` (`ID`, `fornavn`, `efternavn`, `fodselsdato`, `adresse`, `postnr`, `city`, `oprettet`, `tlf`) VALUES
 (5, 'jajaja', 'jajaja', '2016-09-09', 'jajajavej 22', 2222, 'jajajaby', '2017-05-29 10:59:32', 22222222),
 (6, 'lelelelel', 'lelelelel', '1843-07-04', 'fejaiofjda', 2388, 'jfaduhfasuid', '2017-05-29 10:59:32', 48239423),
-(7, 'test', 'test', '2012-08-04', 'hdufahdsi', 4892, 'rjdiahru', '2017-05-29 10:59:32', 23849232),
+(7, 'Test', 'Medarbejder', '2012-08-04', 'hdufahdsi', 4892, 'rjdiahru', '2017-05-29 10:59:32', 23849232),
 (8, 'Nikolaj', 'Pregaard', '1997-07-09', 'Gyldenrisvej 52 2th', 2300, 'KÃ¸benhavn S', '2017-05-29 10:59:32', 22744460),
-(9, 'admin1', 'admin', '2017-05-24', 'Administrationsvej 22', 2300, 'Adminby', '2017-05-29 10:59:32', 48237423),
+(9, 'Normal', 'Admin', '2017-05-24', 'Administrationsvej 22', 2300, 'Adminby', '2017-05-29 10:59:32', 48237423),
 (10, 'Super', 'Admin', '2017-05-24', 'SuperAdminVej', 9999, 'SuperAdminBy', '2017-05-29 10:59:32', 99999999),
 (11, 'Nikolaj', 'Pregaard', '1997-07-09', 'Gyldenrisvej 52 2th', 2300, 'KÃ¸benhavn S', '2017-05-29 11:19:53', 22),
 (12, 'Nikolaj', 'Pregaard', '1997-07-09', 'Gyldenrisvej 52 2th', 2300, 'KÃ¸benhavn S', '2017-05-29 11:21:03', 22744460),
@@ -321,12 +325,12 @@ ALTER TABLE `hold`
 -- Tilføj AUTO_INCREMENT i tabel `instruktorer`
 --
 ALTER TABLE `instruktorer`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Tilføj AUTO_INCREMENT i tabel `media`
 --
 ALTER TABLE `media`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Tilføj AUTO_INCREMENT i tabel `niveau`
 --
